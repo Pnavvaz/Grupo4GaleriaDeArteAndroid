@@ -1,6 +1,5 @@
 package com.example.proyectomultidisciplinarsupuesto5;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
