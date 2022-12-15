@@ -1,10 +1,7 @@
 package com.example.proyectomultidisciplinarsupuesto5;
 
-import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
-
 import android.os.Bundle;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,23 +28,29 @@ public class Prueba extends AppCompatActivity {
 
         layoutBody = findViewById(R.id.layoutBody);
 
-        String URL = "http://localhost:63342/PHP_Pablo_Navarro_Vazquez/Prueba/cn.php";
+
+//        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+//
+//        StrictMode.setThreadPolicy(policy);
+//
+//        try {
+//            System.out.println("Ip local --> " + InetAddress.getLocalHost().getHostAddress());
+//
+//        } catch (
+//                UnknownHostException e) {
+//            System.err.println("Error --> " + e.getMessage());
+//        }
+
+        String URL = "http://192.168.18.149/prueba/Conexion.php";
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                JSONObject jsonObject = null;
+                JSONObject jsonObject;
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         jsonObject = response.getJSONObject(i);
-                        System.out.println(jsonObject.length());
-//                        e1.setText(jsonObject.getString("nombre"));
-//                        e2.setText(jsonObject.getString("apellido"));
-//                        e3.setText(jsonObject.getString("direccion"));
-//                        e4.setText(jsonObject.getString("telefono"));
-//                        e5.setText(jsonObject.getString("correo"));
-//                        e6.setText(jsonObject.getString("sexo"));
-//                        e7.setText(jsonObject.getString("fecha"));
+                        System.out.println(jsonObject.getString("Titulo"));
 
                     } catch (JSONException e) {
                         System.err.println(e.getMessage());
@@ -58,7 +61,8 @@ public class Prueba extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(Prueba.this, "Error de conexión", Toast.LENGTH_SHORT).show();
+                System.out.println("/////////////////////////////////////////////////////////////////////// ERROR ///////////////////////////////////////////////////////////////////////");
+                System.err.println("Error de conexión " + error.getMessage());
             }
         }
         );
