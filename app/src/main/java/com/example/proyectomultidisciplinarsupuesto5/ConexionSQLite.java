@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 public class ConexionSQLite extends SQLiteOpenHelper {
 
-    final String TBL_USR =
+    final String TBL_USR ="";
 
     public ConexionSQLite(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
