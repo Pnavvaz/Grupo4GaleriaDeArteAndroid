@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ProyectoMultidisciplinarSupuesto5</string>
+    <string name="subirArchivo">Subir Archivo</string>
+    <string name="descargaArchivo">Descargar Archivo</string>
+    <string name="crearCarpeta">Crear Carpeta</string>
+    <string name="renombrarCarpetaArchivo">Renombrar Carpeta o Archivo</string>
+    <string name="borrarCarpeta">Borrar Carpeta</string>
+    <string name="correoElectronio">Correo Electronico</string>
 </resources>
