@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,8 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/titulo"
@@ -19,57 +18,62 @@
             android:layout_gravity="center"
             android:text="@string/manualDeUsuario"
             android:textAlignment="center"
-            android:textStyle="bold"
-            android:textSize="40dp" />
+            android:textSize="40dp"
+            android:textStyle="bold" />
 
         <GridLayout
+            android:id="@+id/gridBtns"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:rowCount="3"
-            android:orientation="vertical"
             android:layout_gravity="center"
-            >
-            <Button
-                android:id="@+id/subirArchivo"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
-                android:layout_margin="2dp"
-                android:text="@string/subirArchivo"/>
-            <Button
-                android:id="@+id/crearCarpeta"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="9dp"
-                android:layout_margin="2dp"
-                android:text="@string/crearCarpeta"/>
-            <Button
-                android:id="@+id/borrarCarpeta"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="9dp"
-                android:layout_margin="2dp"
-                android:text="@string/borrarCarpeta"/>
-            <Button
-                android:id="@+id/descargarArchivo"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
-                android:layout_margin="2dp"
-                android:text="@string/descargaArchivo"/>
+            android:orientation="vertical"
+            android:rowCount="3"/>
 
-            <Button
-                android:id="@+id/renombrarCarpetaArchivo"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
-                android:layout_margin="2dp"
-                android:text="@string/renombrarCarpetaArchivo"/>
 
-            <Button
-                android:id="@+id/correoElectronico"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
-                android:layout_margin="2dp"
-                android:text="@string/correoElectronio"/>
-        </GridLayout>
+<!--        <Button-->
+<!--            android:id="@+id/subirArchivo"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_margin="2dp"-->
+<!--            android:text="@string/subirArchivo" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/crearCarpeta"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_margin="2dp"-->
+<!--            android:layout_marginTop="9dp"-->
+<!--            android:text="@string/crearCarpeta" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/borrarCarpeta"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_margin="2dp"-->
+<!--            android:layout_marginTop="9dp"-->
+<!--            android:text="@string/borrarCarpeta" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/descargarArchivo"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_margin="2dp"-->
+<!--            android:text="@string/descargaArchivo" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/renombrarCarpetaArchivo"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_margin="2dp"-->
+<!--            android:text="@string/renombrarCarpetaArchivo" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/correoElectronico"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_margin="2dp"-->
+<!--            android:text="@string/correoElectronio" />-->
+
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
