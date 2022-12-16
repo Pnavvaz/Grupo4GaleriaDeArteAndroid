@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Button btnTitle = new Button(getApplicationContext());
                         btnTitle.setText(jsonObject.getString("Titulo"));
+                        btnTitle.setTag(jsonObject.getInt("Id"));
 
                         GridLayout.LayoutParams params = new GridLayout.LayoutParams();
 
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 Bundle bundle = new Bundle();
                                 bundle.putString("Titulo", btn.getText().toString());
+                                bundle.putInt("idTitulo", Integer.parseInt(btn.getTag().toString()));
 
                                 i.putExtras(bundle);
                                 startActivity(i);

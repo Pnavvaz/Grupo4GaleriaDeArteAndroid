@@ -36,7 +36,8 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
 
         Bundle bundle = getIntent().getExtras();
 
-        int tituloTxt = bundle.getInt("Titulo");
+        String tituloTxt = bundle.getString("Titulo");
+        int idTitulo = bundle.getInt("idTitulo");
 
         TextView tituloTv = new TextView(this);
         tituloTv.setText(tituloTxt);
@@ -48,7 +49,7 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
 
         tituloTv.setGravity(View.TEXT_ALIGNMENT_CENTER);
 
-        crearManual();
+        crearManual(idTitulo);
 
         Button btnBack = new Button(this);
         btnBack.setText("Volver");
@@ -71,8 +72,8 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
 
     }
 
-    private void crearManual() {
-        String URL = "http://11.65.4.5/proyecto/VerManual.php?titulo=";
+    private void crearManual(int idTitulo) {
+        String URL = "http://11.65.4.5/proyecto/VerManual.php?idTitulo=" + idTitulo;
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override

@@ -1,9 +1,9 @@
 <?php
 $c = mysqli_connect("localhost", "root", "", "manual");
 
-$titulo = $_GET ['titulo'];
+$idTitulo = $_GET ['idTitulo'];
 
-$sql = "SELECT Textos FROM  textos WHERE idTitulo = (SELECT ID FROM TITULOS WHERE TITULO = '$titulo')";
+$sql = "SELECT * FROM  textos WHERE idTitulo = '$idTitulo'";
 
 $query = $c->query($sql);
 
