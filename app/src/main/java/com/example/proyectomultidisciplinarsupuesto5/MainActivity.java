@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,12 +32,11 @@ public class MainActivity extends AppCompatActivity {
 
         gridBtns = findViewById(R.id.gridBtns);
 
-
         crearBotones();
     }
 
     private void crearBotones() {
-        String URL = "http://192.168.18.149/prueba/Conexion.php";
+        String URL = "http://11.65.4.5/proyecto/Conexion.php";
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override
@@ -48,6 +48,16 @@ public class MainActivity extends AppCompatActivity {
 
                         Button btnTitle = new Button(getApplicationContext());
                         btnTitle.setText(jsonObject.getString("Titulo"));
+
+                        GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+
+                        params.setMargins(10,5,10,5);
+
+                        btnTitle.setLayoutParams(params);
+
+                        btnTitle.setTextSize(20);
+
+                        btnTitle.setWidth(350);
 
                         btnTitle.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -74,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                Toast.makeText(MainActivity.this, "Error de conexión", Toast.LENGTH_SHORT).show();
                 System.out.println("/////////////////////////////////////////////////////////////////////// ERROR ///////////////////////////////////////////////////////////////////////");
                 System.err.println("Error de conexión " + error.getMessage());
             }
