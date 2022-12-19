@@ -2,15 +2,15 @@ package com.example.proyectomultidisciplinarsupuesto5;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.RequestQueue;
@@ -27,7 +27,6 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
 
     private LinearLayout layoutManual;
     private RequestQueue requestQueue;
-    private LinearLayout cuerpo;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,16 +50,10 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
 
         tituloTv.setGravity(View.TEXT_ALIGNMENT_CENTER);
 
-        cuerpo = new LinearLayout(this);
-
         crearManual(idTitulo);
 
-        Button btnBack = new Button(this);
-        btnBack.setText("Volver");
-        btnBack.setOnClickListener(this);
-
-        layoutManual.addView(btnBack);
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
 //        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 //
@@ -74,6 +67,16 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
 //            System.err.println("Error --> " + e.getMessage());
 //        }
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void crearManual(int idTitulo) {
@@ -93,14 +96,13 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
                         TextView tvCuerpo = new TextView(VentanaManual.this);
                         tvCuerpo.setText(jsonObject.getString("Textos"));
 
-                        cuerpo.addView(tvCuerpo);
-                        System.out.println("Hijo Pre --> " + ((TextView) cuerpo.getChildAt(i)).getText().toString());
+                        layoutManual.addView(tvCuerpo);
+                        System.out.println("Hijo Pre --> " + ((TextView) layoutManual.getChildAt(i)).getText().toString());
 
                     } catch (JSONException e) {
                         System.err.println(e.getMessage());
                     }
                 }
-                layoutManual.addView(cuerpo);
             }
         }, new Response.ErrorListener() {
             @Override
