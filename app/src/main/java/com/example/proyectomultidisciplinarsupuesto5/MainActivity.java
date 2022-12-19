@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void crearBotones() {
-        String URL = "http://11.65.4.5/proyecto/Conexion.php";
+        String URL = "http://192.168.18.149/prueba/Conexion.php";
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
                         btnTitle.setTextSize(20);
 
-                        btnTitle.setWidth(350);
+                        btnTitle.setWidth(480);
 
                         btnTitle.setOnClickListener(new View.OnClickListener() {
                             @Override

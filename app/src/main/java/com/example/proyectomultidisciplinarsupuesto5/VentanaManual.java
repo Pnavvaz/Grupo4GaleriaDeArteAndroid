@@ -3,6 +3,7 @@ package com.example.proyectomultidisciplinarsupuesto5;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
@@ -26,6 +27,7 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
 
     private LinearLayout layoutManual;
     private RequestQueue requestQueue;
+    private LinearLayout cuerpo;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,6 +50,8 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
         layoutManual.addView(tituloTv);
 
         tituloTv.setGravity(View.TEXT_ALIGNMENT_CENTER);
+
+        cuerpo = new LinearLayout(this);
 
         crearManual(idTitulo);
 
@@ -73,22 +77,16 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
     }
 
     private void crearManual(int idTitulo) {
-        String URL = "http://11.65.4.5/proyecto/VerManual.php?idTitulo=" + idTitulo;
+        String URL = "http://192.168.18.149/prueba/VerManual.php?idTitulo=" + idTitulo;
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 JSONObject jsonObject;
 
-                System.out.println("AQUI");
-
-                LinearLayout cuerpo = new LinearLayout(VentanaManual.this);
-
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         jsonObject = response.getJSONObject(i);
-
-                        System.out.println("Objeto --> " + jsonObject.toString());
 
                         System.out.println("Texto -> " + jsonObject.getString("Textos"));
 
@@ -96,14 +94,13 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
                         tvCuerpo.setText(jsonObject.getString("Textos"));
 
                         cuerpo.addView(tvCuerpo);
+                        System.out.println("Hijo Pre --> " + ((TextView) cuerpo.getChildAt(i)).getText().toString());
 
                     } catch (JSONException e) {
                         System.err.println(e.getMessage());
                     }
                 }
-
                 layoutManual.addView(cuerpo);
-
             }
         }, new Response.ErrorListener() {
             @Override
