@@ -53,7 +53,7 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
         layoutManual.addView(tituloTv);
 
         tituloTv.setGravity(View.TEXT_ALIGNMENT_CENTER);
-        agregarImagenes();
+        agregarImagenes(idTitulo);
         crearManual(idTitulo);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -72,19 +72,38 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
 
     }
 
-    private void agregarImagenes() {
-        ImageView img1=new ImageView(this);
-        img1.setImageResource(R.mipmap.eliminar_carpteta);
-        imageViewArrayList.add(img1);
-        ImageView img2=new ImageView(this);
-        img2.setImageResource(R.mipmap.eliminar_carpeta2);
-        imageViewArrayList.add(img2);
-        ImageView img3=new ImageView(this);
-        img3.setImageResource(R.mipmap.eliminar_carpeta3);
-        imageViewArrayList.add(img3);
-        ImageView img4=new ImageView(this);
-        img4.setImageResource(R.mipmap.eliminar_carpeta2);
-        imageViewArrayList.add(img4);
+    private void agregarImagenes(int idTitulo) {
+        switch (idTitulo){
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+            case 4:
+
+                break;
+            case 5:
+                ImageView img1=new ImageView(this);
+                img1.setImageResource(R.mipmap.eliminar_carpeta_1);
+                imageViewArrayList.add(img1);
+                ImageView img2=new ImageView(this);
+                img2.setImageResource(R.mipmap.eliminar_carpeta_2);
+                imageViewArrayList.add(img2);
+                ImageView img3=new ImageView(this);
+                img3.setImageResource(R.mipmap.eliminar_carpeta_3);
+                imageViewArrayList.add(img3);
+                ImageView img4=new ImageView(this);
+                img4.setImageResource(R.mipmap.eliminar_carpeta_2);
+                imageViewArrayList.add(img4);
+                break;
+            case 6:
+
+                break;
+        }
     }
 
     @Override
