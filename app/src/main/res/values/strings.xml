@@ -5,6 +5,6 @@
     <string name="crearCarpeta">Crear Carpeta</string>
     <string name="renombrarCarpetaArchivo">Renombrar Carpeta o Archivo</string>
     <string name="borrarCarpeta">Borrar Carpeta</string>
-    <string name="correoElectronio">Correo Electronico</string>
+    <string name="correoElectronio">Correo Electrónico</string>
     <string name="manualDeUsuario">Manual de Usuario</string>
 </resources>

@@ -80,7 +80,8 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
     }
 
     private void crearManual(int idTitulo) {
-        String URL = "http://192.168.18.149/prueba/VerManual.php?idTitulo=" + idTitulo;
+        String URL = "http://192.168.56.1/prueba/VerManual.php?idTitulo=" + idTitulo;
+        // String URL = "http://192.168.18.149/prueba/VerManual.php?idTitulo=" + idTitulo;
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override

@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void crearBotones() {
-        String URL = "http://192.168.18.149/prueba/Conexion.php";
+        String URL = "http://192.168.56.1/prueba/Conexion.php";
+//        String URL = "http://192.168.18.149/prueba/Conexion.php";
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override
