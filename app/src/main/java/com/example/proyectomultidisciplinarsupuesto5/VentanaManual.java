@@ -80,7 +80,8 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
                 agregarImagen(R.mipmap.subir_archivo_3);
                 break;
             case 2:
-
+                agregarImagen(R.mipmap.descargar_archivo_1);
+                agregarImagen(R.mipmap.descargar_archivo_2);
                 break;
             case 3:
 
@@ -90,9 +91,6 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
                 break;
             case 5:
                 agregarImagen(R.mipmap.eliminar_carpeta_1);
-                agregarImagen(R.mipmap.eliminar_carpeta_2);
-                agregarImagen(R.mipmap.eliminar_carpeta_3);
-                agregarImagen(R.mipmap.eliminar_carpeta_2);
                 break;
             case 6:
 
