@@ -31,7 +31,7 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prueba);
+        setContentView(R.layout.activity_funciones);
 
         layoutManual = findViewById(R.id.layoutManual);
 
@@ -44,7 +44,7 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
         tituloTv.setText(tituloTxt);
         tituloTv.setTextSize(40);
         tituloTv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-        tituloTv.setPadding(5, 5, 5, 5);
+        tituloTv.setPadding(5, 5, 5, 100);
 
         layoutManual.addView(tituloTv);
 
@@ -96,6 +96,7 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
 
                         TextView tvCuerpo = new TextView(VentanaManual.this);
                         tvCuerpo.setText(jsonObject.getString("Textos"));
+                        tvCuerpo.setTextSize(16);
 
                         layoutManual.addView(tvCuerpo);
                         System.out.println("Hijo Pre --> " + ((TextView) layoutManual.getChildAt(i)).getText().toString());

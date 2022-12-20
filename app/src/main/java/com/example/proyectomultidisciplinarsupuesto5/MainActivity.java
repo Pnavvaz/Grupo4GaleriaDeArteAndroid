@@ -1,7 +1,11 @@
 package com.example.proyectomultidisciplinarsupuesto5;
 
+import android.animation.LayoutTransition;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
@@ -24,12 +28,13 @@ public class MainActivity extends AppCompatActivity {
 
     private RequestQueue requestQueue;
     private GridLayout gridBtns;
+    private Drawable drawable;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        drawable= getDrawable(R.drawable.bordes);
         gridBtns = findViewById(R.id.gridBtns);
 
         crearBotones();
@@ -53,14 +58,17 @@ public class MainActivity extends AppCompatActivity {
 
                         GridLayout.LayoutParams params = new GridLayout.LayoutParams();
 
-                        params.setMargins(10,5,10,5);
-
+                       //if(btnTitle.getText())
                         btnTitle.setLayoutParams(params);
-
                         btnTitle.setTextSize(20);
+                        btnTitle.setBackground(drawable);
+                        btnTitle.setGravity(Gravity.CENTER_HORIZONTAL);
+                        btnTitle.setTextColor(Color.WHITE);
+                        btnTitle.setTextAlignment(View.TEXT_ALIGNMENT_GRAVITY);
 
-                        btnTitle.setWidth(480);
-
+                        params.setMargins(120,15,120,100);
+                        btnTitle.setWidth(450);
+                        btnTitle.setHeight(350);
                         btnTitle.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
