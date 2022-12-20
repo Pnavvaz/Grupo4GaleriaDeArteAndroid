@@ -30,7 +30,7 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
 
     private LinearLayout layoutManual;
     private RequestQueue requestQueue;
-    private ArrayList<ImageView> imageViewArrayList= new ArrayList<>();
+    private ArrayList<ImageView> imageViewArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -73,9 +73,11 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
     }
 
     private void agregarImagenes(int idTitulo) {
-        switch (idTitulo){
+        switch (idTitulo) {
             case 1:
-
+                agregarImagen(R.mipmap.subir_archivo_1);
+                agregarImagen(R.mipmap.subir_archivo_2);
+                agregarImagen(R.mipmap.subir_archivo_3);
                 break;
             case 2:
 
@@ -98,10 +100,10 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    private void agregarImagen(int eliminar_carpeta_1) {
-        ImageView img1=new ImageView(this);
-        img1.setImageResource(eliminar_carpeta_1);
-        imageViewArrayList.add(img1);
+    private void agregarImagen(int id) {
+        ImageView img = new ImageView(this);
+        img.setImageResource(id);
+        imageViewArrayList.add(img);
     }
 
     @Override
@@ -115,7 +117,8 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
     }
 
     private void crearManual(int idTitulo) {
-        String URL = "http://192.168.56.1/prueba/VerManual.php?idTitulo=" + idTitulo;
+//        String URL = "http://192.168.56.1/prueba/VerManual.php?idTitulo=" + idTitulo;
+        String URL = "http://11.65.4.5/prueba/VerManual.php?idTitulo=" + idTitulo;
         // String URL = "http://192.168.18.149/prueba/VerManual.php?idTitulo=" + idTitulo;
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
