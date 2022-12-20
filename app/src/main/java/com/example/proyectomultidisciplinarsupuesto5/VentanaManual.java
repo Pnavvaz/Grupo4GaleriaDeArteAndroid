@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,10 +24,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class VentanaManual extends AppCompatActivity implements View.OnClickListener {
 
     private LinearLayout layoutManual;
     private RequestQueue requestQueue;
+    private ArrayList<ImageView> imageViewArrayList= new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,9 +53,8 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
         layoutManual.addView(tituloTv);
 
         tituloTv.setGravity(View.TEXT_ALIGNMENT_CENTER);
-
+        agregarImagenes();
         crearManual(idTitulo);
-
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -67,6 +70,21 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
 //            System.err.println("Error --> " + e.getMessage());
 //        }
 
+    }
+
+    private void agregarImagenes() {
+        ImageView img1=new ImageView(this);
+        img1.setImageResource(R.mipmap.eliminar_carpteta);
+        imageViewArrayList.add(img1);
+        ImageView img2=new ImageView(this);
+        img2.setImageResource(R.mipmap.eliminar_carpeta2);
+        imageViewArrayList.add(img2);
+        ImageView img3=new ImageView(this);
+        img3.setImageResource(R.mipmap.eliminar_carpeta3);
+        imageViewArrayList.add(img3);
+        ImageView img4=new ImageView(this);
+        img4.setImageResource(R.mipmap.eliminar_carpeta2);
+        imageViewArrayList.add(img4);
     }
 
     @Override
@@ -97,9 +115,8 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
                         TextView tvCuerpo = new TextView(VentanaManual.this);
                         tvCuerpo.setText(jsonObject.getString("Textos"));
                         tvCuerpo.setTextSize(16);
-
                         layoutManual.addView(tvCuerpo);
-                        System.out.println("Hijo Pre --> " + ((TextView) layoutManual.getChildAt(i)).getText().toString());
+                        layoutManual.addView(imageViewArrayList.get(i));
 
                     } catch (JSONException e) {
                         System.err.println(e.getMessage());
