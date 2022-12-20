@@ -87,23 +87,21 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
 
                 break;
             case 5:
-                ImageView img1=new ImageView(this);
-                img1.setImageResource(R.mipmap.eliminar_carpeta_1);
-                imageViewArrayList.add(img1);
-                ImageView img2=new ImageView(this);
-                img2.setImageResource(R.mipmap.eliminar_carpeta_2);
-                imageViewArrayList.add(img2);
-                ImageView img3=new ImageView(this);
-                img3.setImageResource(R.mipmap.eliminar_carpeta_3);
-                imageViewArrayList.add(img3);
-                ImageView img4=new ImageView(this);
-                img4.setImageResource(R.mipmap.eliminar_carpeta_2);
-                imageViewArrayList.add(img4);
+                agregarImagen(R.mipmap.eliminar_carpeta_1);
+                agregarImagen(R.mipmap.eliminar_carpeta_2);
+                agregarImagen(R.mipmap.eliminar_carpeta_3);
+                agregarImagen(R.mipmap.eliminar_carpeta_2);
                 break;
             case 6:
 
                 break;
         }
+    }
+
+    private void agregarImagen(int eliminar_carpeta_1) {
+        ImageView img1=new ImageView(this);
+        img1.setImageResource(eliminar_carpeta_1);
+        imageViewArrayList.add(img1);
     }
 
     @Override
