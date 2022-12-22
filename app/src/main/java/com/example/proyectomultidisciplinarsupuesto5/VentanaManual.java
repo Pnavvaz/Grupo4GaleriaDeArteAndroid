@@ -55,6 +55,7 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
         tituloTv.setGravity(View.TEXT_ALIGNMENT_CENTER);
         agregarImagenes(idTitulo);
         crearManual(idTitulo);
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -116,7 +117,7 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
 
     private void crearManual(int idTitulo) {
 //        String URL = "http://192.168.56.1/prueba/VerManual.php?idTitulo=" + idTitulo;
-        String URL = "http://11.65.4.5/prueba/VerManual.php?idTitulo=" + idTitulo;
+        String URL = "http://11.65.4.6/prueba/VerManual.php?idTitulo=" + idTitulo;
         // String URL = "http://192.168.18.149/prueba/VerManual.php?idTitulo=" + idTitulo;
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {

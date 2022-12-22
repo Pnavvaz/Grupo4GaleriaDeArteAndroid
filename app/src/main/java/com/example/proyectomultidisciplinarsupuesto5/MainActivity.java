@@ -42,13 +42,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void crearBotones() {
 //        String URL = "http://192.168.56.1/prueba/Conexion.php";
-        String URL = "http://11.65.4.5/prueba/Conexion.php";
+        String URL = "http://11.65.4.6/prueba/Conexion.php";
 //        String URL = "http://192.168.18.149/prueba/Conexion.php";
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 JSONObject jsonObject;
+                gridBtns.setRowCount((int) Math.ceil((double) response.length()/2));
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         jsonObject = response.getJSONObject(i);
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                                 i.putExtras(bundle);
                                 startActivity(i);
                             }
-                        });
+                            });
 
                         gridBtns.addView(btnTitle);
 
