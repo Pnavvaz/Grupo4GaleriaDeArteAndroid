@@ -78,22 +78,48 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
                 agregarImagen(R.mipmap.subir_archivo_1);
                 agregarImagen(R.mipmap.subir_archivo_2);
                 agregarImagen(R.mipmap.subir_archivo_3);
+                agregarImagen(R.mipmap.subir_archivo_4);
                 break;
             case 2:
                 agregarImagen(R.mipmap.descargar_archivo_1);
                 agregarImagen(R.mipmap.descargar_archivo_2);
+                agregarImagen(R.mipmap.descargar_archivo_3);
                 break;
             case 3:
-
+                agregarImagen(R.mipmap.crear_carpeta_1);
+                agregarImagen(R.mipmap.crear_carpeta_2);
                 break;
             case 4:
-
+                agregarImagen(R.mipmap.renombrar_carpeta_archivo_1);
+                agregarImagen(R.mipmap.renombrar_carpeta_archivo_2);
                 break;
             case 5:
                 agregarImagen(R.mipmap.eliminar_carpeta_1);
+                agregarImagen(R.mipmap.eliminar_carpeta_2);
                 break;
             case 6:
-
+                agregarImagen(R.mipmap.correo_electronico_1);
+                agregarImagen(R.mipmap.correo_electronico_2);
+                agregarImagen(R.mipmap.correo_electronico_3);
+                agregarImagen(R.mipmap.correo_electronico_4);
+                agregarImagen(R.mipmap.correo_electronico_5);
+                agregarImagen(R.mipmap.correo_electronico_6);
+                break;
+            case 7:
+                agregarImagen(R.mipmap.eliminar_archivo_1);
+                agregarImagen(R.mipmap.eliminar_archivo_2);
+                break;
+            case 8:
+                agregarImagen(R.mipmap.restablecer_contra_1);
+                agregarImagen(R.mipmap.restablecer_contra_2);
+                agregarImagen(R.mipmap.restablecer_contra_3);
+                break;
+            case 9:
+                agregarImagen(R.mipmap.soporte_tecnico_1);
+                agregarImagen(R.mipmap.soporte_tecnico_2);
+                break;
+            case 10:
+                agregarImagen(R.mipmap.soporte_tecnico_2);
                 break;
         }
     }
@@ -115,8 +141,8 @@ public class VentanaManual extends AppCompatActivity implements View.OnClickList
     }
 
     private void crearManual(int idTitulo) {
-//        String URL = "http://192.168.56.1/prueba/VerManual.php?idTitulo=" + idTitulo;
-        String URL = "http://11.65.4.5/prueba/VerManual.php?idTitulo=" + idTitulo;
+     String URL = "http://192.168.56.1/prueba/VerManual.php?idTitulo=" + idTitulo;
+       // String URL = "http://11.65.4.5/prueba/VerManual.php?idTitulo=" + idTitulo;
         // String URL = "http://192.168.18.149/prueba/VerManual.php?idTitulo=" + idTitulo;
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
